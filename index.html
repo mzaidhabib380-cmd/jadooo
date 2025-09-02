@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jadoo Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #F5F5F5;
+    }
+
+    .header {
+      height: 100vh;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 60px;
+    }
+
+    .navbar .menus ul,
+    .btns ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    .navbar ul li a {
+      color: #212832;
+      font-weight: 500;
+    }
+
+    .btns ul li a {
+      background-color: #F1A501;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      height: 80vh;
+    }
+
+    .text {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .text p {
+      color: #DF6951;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .text h1 {
+      color: #181E4B;
+      font-size: 60px;
+      font-family: 'Volkhov', serif;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .text h5 {
+      color: #5E6282;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .text button {
+      color: white;
+      background-color: #F1A501;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: fit-content;
+    }
+
+    .text button:hover {
+      background-color: #d68f00;
+    }
+
+    .img {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .img img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .text, .img {
+        width: 100%;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .navbar .menus ul {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
+    .services {
+  padding: 60px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.services-heading p {
+  color: #5e6282;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.services-heading h2 {
+  font-size: 40px;
+  color: #14183E;
+  font-family: 'Volkhov', serif;
+  margin-bottom: 40px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background: #f9f9f9;
+  padding: 30px 20px;
+  border-radius: 20px;
+  width: 22%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 18px;
+  color: #1E1D4C;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #5E6282;
+  line-height: 1.6;
+}
+
+.card.active {
+  background-color: white;
+   position: relative;
+}
+
+.card.active::before {
+  
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  
+  border-radius: 0 20px 0 0;
+}
+/* Destinations Section */
+.destinations {
+  padding: 80px 60px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.destinations-heading p {
+  color: #5e6282;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.destinations-heading h2 {
+  font-size: 40px;
+  color: #14183E;
+  font-family: 'Volkhov', serif;
+  margin-bottom: 50px;
+}
+
+.destination-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.destination-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  width: 300px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  color: #1E1D4C;
+}
+
+.card-content span {
+  font-size: 16px;
+  color: #5E6282;
+  font-weight: bold;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #5E6282;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="navbar">
+      <div class="logo">
+        <img src="./Jadoo.png" alt="Jadoo Logo" width="100">
+      </div>
+      <div class="menus">
+        <ul>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Flights</a></li>
+          <li><a href="#">Bookings</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+      <div class="btns">
+        <ul>
+          <li><a href="#">Sign up</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="text">
+        <p>BEST DESTINATIONS AROUND THE WORLD</p>
+        <h1>Travel, enjoy <br>and live a new <br>and full life</h1>
+        <h5>Built Wicket longer admire do barton vanity itself do in it.<br>
+          Preferred to sportsmen it engrossed listening.<br>
+          Park gate sell they west hard for the.</h5>
+        <button>Find out more</button>
+      </div>
+      <div class="img">
+        <img src="./Image.png" alt="Traveler Image">
+      </div>
+    </div>
+
+
+
+
+    <div class="services">
+  <div class="services-heading">
+    <p>CATEGORY</p>
+    <h2>We Offer Best Services</h2>
+  </div>
+
+  <div class="service-cards">
+    <div class="card">
+      <img src="./Group 48.png" alt="Weather Icon">
+      <h3>Calculated Weather</h3>
+      <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+    </div>
+
+    <div class="card active">
+      <img src="./plane.png" alt="Flight Icon">
+      <h3>Best Flights</h3>
+      <p>Engrossed listening. Park gate sell they west hard for the.</p>
+    </div>
+
+    <div class="card">
+      <img src="./Group 50.png" alt="Mic Icon">
+      <h3>Local Events</h3>
+      <p>Barton vanity itself do in it. Prefer to men it engrossed listening.</p>
+    </div>
+
+    <div class="card">
+      <img src="./Group 49.png" alt="Gear Icon">
+      <h3>Customization</h3>
+      <p>We deliver outsourced aviation services for military customers.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="destinations">
+  <div class="destinations-heading">
+    <p>Top Selling</p>
+    <h2>Top Destinations</h2>
+  </div>
+
+  <div class="destination-cards">
+    
+    <div class="destination-card">
+      <img src="./Rectangle 14.png" alt="Rome, Italy">
+      <div class="card-content">
+        <div class="info">
+          <h3>Rome, Italy</h3>
+          <span>$5.42k</span>
+        </div>
+        <p> 10 Days Trip</p>
+      </div>
+    </div>
+
+   
+    <div class="destination-card">
+      <img src="./Rectangle 13.jpg" alt="London, UK">
+      <div class="card-content">
+        <div class="info">
+          <h3>London, UK</h3>
+          <span>$4.2k</span>
+        </div>
+        <p> 12 Days Trip</p>
+      </div>
+    </div>
+
+    
+    <div class="destination-card">
+      <img src="./Destination.png" alt="Full Europe">
+      <div class="card-content">
+        <div class="info">
+          <h3>Full Europe</h3>
+          <span>$15k</span>
+        </div>
+        <p> 28 Days Trip</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
